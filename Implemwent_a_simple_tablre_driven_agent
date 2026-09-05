@@ -1,0 +1,28 @@
+rooms = {}
+
+status_a = input("Enter status of Room A (D/C): ").strip().capitalize()
+status_b = input("Enter status of Room B (D/C): ").strip().capitalize()
+
+rooms['A'] = "Dirty" if status_a.startswith('D') else "Clean"
+rooms['B'] = "Dirty" if status_b.startswith('D') else "Clean"
+
+if rooms['A'] == "Clean" and rooms['B'] == "Clean":
+    print("\nAll rooms are Clean. Task completed.")
+else:
+    if rooms['A'] == "Dirty":
+        print("\nRoom A is Dirty")
+        print("Action: Suck")
+        rooms['A'] = "Clean"
+        print("Room A Cleaned")
+    else:
+        print("\nRoom A is already Clean")
+
+    if rooms['B'] == "Dirty":
+        print("\nRoom B is Dirty")
+        print("Action: Suck")
+        rooms['B'] = "Clean"
+        print("Room B Cleaned")
+    else:
+        print("\nRoom B is already Clean")
+
+    print("\nAll rooms are Clean. Task completed.")
