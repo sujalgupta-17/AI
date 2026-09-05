@@ -1,0 +1,49 @@
+from collections import deque
+
+def neighbours(state):
+    i = state.index(0)
+    moves = []
+    for d in (-3, 3, -1, 1):
+        j = i + d
+        if 0 <= j < 9 and not (i % 3 == 0 and d == -1) and not (i % 3 == 2 and d == 1):
+            s = list(state)
+            s[i], s[j] = s[j], s[i]
+            moves.append(tuple(s))
+    return moves
+
+def bfs(start, goal):
+    q = deque([(start, [start])])
+    visited = {start}
+
+    while q:
+        state, path = q.popleft()
+        if state == goal:
+            return path
+        for n in neighbours(state):
+            if n not in visited:
+                visited.add(n)
+                q.append((n, path + [n]))
+
+start = (1, 2, 3, 4, 0, 6, 7, 5, 8)
+goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+print("Initial state:")
+print(start[:3])
+print(start[3:6])
+print(start[6:])
+print()
+
+print("Goal state:")
+print(goal[:3])
+print(goal[3:6])
+print(goal[6:])
+print()
+
+path = bfs(start, goal)
+print("Shortest path length:", len(path) - 1)
+
+for step in path:
+    print(step[:3])
+    print(step[3:6])
+    print(step[6:])
+    print()
