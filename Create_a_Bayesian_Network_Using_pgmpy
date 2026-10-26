@@ -1,0 +1,103 @@
+#pip install pgmpy
+
+# Experiment: Practical No. 10
+# Probability Reasoning (Bayesian Networks & Inference)
+# Create a Bayesian Network using pgmpy
+
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+from pgmpy.models import DiscreteBayesianNetwork
+from pgmpy.factors.discrete import TabularCPD
+from pgmpy.inference import VariableElimination
+
+# 1. Define network structure
+model = DiscreteBayesianNetwork([
+    ("Burglary", "Alarm"),
+    ("Earthquake", "Alarm"),
+    ("Alarm", "JohnCalls"),
+    ("Alarm", "MaryCalls")
+])
+
+# 2. Define Conditional Probability Distributions (CPDs)
+cpd_b = TabularCPD(
+    variable='Burglary',
+    variable_card=2,
+    values=[[0.999], [0.001]],
+    state_names={'Burglary': ['False', 'True']}
+)
+
+cpd_e = TabularCPD(
+    variable='Earthquake',
+    variable_card=2,
+    values=[[0.998], [0.002]],
+    state_names={'Earthquake': ['False', 'True']}
+)
+
+cpd_a = TabularCPD(
+    variable='Alarm',
+    variable_card=2,
+    values=[
+        [0.999, 0.71, 0.06, 0.05],
+        [0.001, 0.29, 0.94, 0.95]
+    ],
+    evidence=['Burglary', 'Earthquake'],
+    evidence_card=[2, 2],
+    state_names={
+        'Alarm': ['False', 'True'],
+        'Burglary': ['False', 'True'],
+        'Earthquake': ['False', 'True']
+    }
+)
+
+cpd_j = TabularCPD(
+    variable='JohnCalls',
+    variable_card=2,
+    values=[
+        [0.95, 0.1],
+        [0.05, 0.9]
+    ],
+    evidence=['Alarm'],
+    evidence_card=[2],
+    state_names={
+        'JohnCalls': ['False', 'True'],
+        'Alarm': ['False', 'True']
+    }
+)
+
+cpd_m = TabularCPD(
+    variable='MaryCalls',
+    variable_card=2,
+    values=[
+        [0.99, 0.3],
+        [0.01, 0.7]
+    ],
+    evidence=['Alarm'],
+    evidence_card=[2],
+    state_names={
+        'MaryCalls': ['False', 'True'],
+        'Alarm': ['False', 'True']
+    }
+)
+
+# 3. Add CPDs to the model
+model.add_cpds(cpd_b, cpd_e, cpd_a, cpd_j, cpd_m)
+
+# Check model consistency
+print("Is Bayesian Network valid?", model.check_model())
+
+# 4. Perform Inference
+infer = VariableElimination(model)
+
+result = infer.query(
+    variables=['Burglary'],
+    evidence={
+        'JohnCalls': 'True',
+        'MaryCalls': 'True'
+    }
+)
+
+print("\nProbability of Burglary given JohnCalls=True and MaryCalls=True:")
+print(result)
+
+A Bayesian Network is a probabilistic graphical model that represents relationships between random variables. It consists of nodes representing variables and directed edges representing dependencies between them. The network uses conditional probability tables to describe these relationships. The Python library pgmpy can be used to create and work with Bayesian Networks. For example, a network can represent how rain affects wet grass.
