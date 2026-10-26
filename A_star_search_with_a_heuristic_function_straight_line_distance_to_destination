@@ -43,3 +43,6 @@ path, cost = astar("Arad", "Bucharest")
 print("Shortest Path using A* search:")
 print("Path:", " -> ".join(path))
 print("Total Cost:", cost)
+
+Is practical mein A* algorithm goal tak ki estimated distance ke liye straight-line distance use karta hai. Ye do points ke beech seedhi line ki distance hoti hai.
+Algorithm actual cost aur estimated cost dono use karta hai.
