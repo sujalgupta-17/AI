@@ -1,0 +1,103 @@
+# Experiment: Practical No. 11
+# Compute posterior probability using Bayesian Network
+
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+from pgmpy.models import DiscreteBayesianNetwork
+from pgmpy.factors.discrete import TabularCPD
+from pgmpy.inference import VariableElimination
+
+# 1. Define network structure
+model = DiscreteBayesianNetwork([
+    ("Burglary", "Alarm"),
+    ("Earthquake", "Alarm"),
+    ("Alarm", "JohnCalls"),
+    ("Alarm", "MaryCalls")
+])
+
+# 2. Define Conditional Probability Distributions (CPDs)
+cpd_b = TabularCPD(
+    variable='Burglary',
+    variable_card=2,
+    values=[[0.999], [0.001]],
+    state_names={'Burglary': ['False', 'True']}
+)
+
+cpd_e = TabularCPD(
+    variable='Earthquake',
+    variable_card=2,
+    values=[[0.998], [0.002]],
+    state_names={'Earthquake': ['False', 'True']}
+)
+
+cpd_a = TabularCPD(
+    variable='Alarm',
+    variable_card=2,
+    values=[
+        [0.999, 0.71, 0.06, 0.05],
+        [0.001, 0.29, 0.94, 0.95]
+    ],
+    evidence=['Burglary', 'Earthquake'],
+    evidence_card=[2, 2],
+    state_names={
+        'Alarm': ['False', 'True'],
+        'Burglary': ['False', 'True'],
+        'Earthquake': ['False', 'True']
+    }
+)
+
+cpd_j = TabularCPD(
+    variable='JohnCalls',
+    variable_card=2,
+    values=[
+        [0.95, 0.1],
+        [0.05, 0.9]
+    ],
+    evidence=['Alarm'],
+    evidence_card=[2],
+    state_names={
+        'JohnCalls': ['False', 'True'],
+        'Alarm': ['False', 'True']
+    }
+)
+
+cpd_m = TabularCPD(
+    variable='MaryCalls',
+    variable_card=2,
+    values=[
+        [0.99, 0.3],
+        [0.01, 0.7]
+    ],
+    evidence=['Alarm'],
+    evidence_card=[2],
+    state_names={
+        'MaryCalls': ['False', 'True'],
+        'Alarm': ['False', 'True']
+    }
+)
+
+# 3. Add CPDs to the model
+model.add_cpds(cpd_b, cpd_e, cpd_a, cpd_j, cpd_m)
+
+# Check model consistency
+print("Is Bayesian Network valid?", model.check_model())
+
+# 4. Perform Inference to compute posterior probability
+infer = VariableElimination(model)
+
+result = infer.query(
+    variables=['Burglary'],
+    evidence={'Alarm': 'True'}
+)
+
+print("\nPosterior Probability:")
+print("P(Burglary | Alarm = True)")
+print(result)
+
+
+Posterior probability is the updated probability of a variable after observing evidence.
+In a Bayesian Network, inference is used to calculate this probability based on the network 
+structure and conditional probability tables. For example, if the grass is wet, we can calculate 
+the probability that it rained. The pgmpy library provides inference methods, such as variable elimination, 
+to calculate posterior probabilities.
