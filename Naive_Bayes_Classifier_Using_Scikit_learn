@@ -45,3 +45,7 @@ if prediction[0] == 1:
 else:
     print("Prediction: No, we cannot play")
 
+Naive Bayes is a machine learning classification algorithm based on Bayes’ Theorem. It assumes that the 
+features are conditionally independent of each other given the class. It learns from training data and predicts
+the class of new data. Scikit-learn provides ready-made Naive Bayes models such as GaussianNB and MultinomialNB.
+It is commonly used for spam detection, text classification and sentiment analysis.
