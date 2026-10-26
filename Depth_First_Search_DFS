@@ -36,3 +36,6 @@ def dfs(x, y, path):
 
 if not dfs(0, 0, []):
     print("No solution found")
+
+
+DFS mein pehle ek path par jitna deep ja sakte hain utna jaate hain. Jab aage path nahi milta, toh backtrack karke doosra path check karte hain. Ismein stack ya recursion use hota hai.
