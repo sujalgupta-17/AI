@@ -1,0 +1,319 @@
+================================================================================
+                    JIRA PRACTICALS LAB MANUAL (1 TO 12)
+           Course: Artificial Intelligence Application Development & Jira
+================================================================================
+
+--------------------------------------------------------------------------------
+PRACTICAL 1-A: CREATE A JIRA CLOUD ACCOUNT AND EXPLORE THE DASHBOARD
+--------------------------------------------------------------------------------
+1. Open Google Chrome and search for "Jira".
+2. Click on the official Jira by Atlassian link ("Try Jira Free" / "Sign Up Free Today").
+3. Choose "Continue with Google" and sign in using your Gmail account.
+4. On the account setup screen, enter your site name / URL and click "Continue".
+5. Answer the introductory questions:
+   - What kind of work do you do? Select "Project Management".
+   - Select a template: Choose "Kanban" and click "Continue".
+6. Select the types of work you track and click "Next".
+7. Click "Go to Jira" to launch the dashboard and explore the default interface.
+
+--------------------------------------------------------------------------------
+PRACTICAL 1-B: CREATE A COMPANY-MANAGED SCRUM/KANBAN PROJECT
+--------------------------------------------------------------------------------
+1. Navigate to the top navigation bar and click on "Projects" (or "Spaces").
+2. Click "Create Project" (or "Create Space").
+3. Select "Kanban" (or "Scrum") from the project templates and click "Use Template".
+4. Select "Company-managed" in the project type configuration option.
+5. Provide the project name and key, then click "Next".
+6. On the "Bring your team along" screen, add team member email addresses or select "I'll do this later", then click "Next" to land on the dashboard.
+
+--------------------------------------------------------------------------------
+PRACTICAL 1-C: CONFIGURE PROJECT DETAILS
+--------------------------------------------------------------------------------
+1. Open the project created in Practical 1-B.
+2. In the left-hand navigation sidebar, click on "Project settings" (or "Space settings").
+3. Under the "Details" section:
+   - Modify the Project Name, Project Key, and Project URL if needed.
+   - Assign the Project Lead and Default Assignee.
+   - Upload or select a custom project avatar/icon.
+4. Click "Save details" / "Save changes".
+
+--------------------------------------------------------------------------------
+PRACTICAL 2-A: ADD TEAM MEMBERS
+--------------------------------------------------------------------------------
+1. Open your target Jira Project.
+2. Click on "Project settings" -> "People" (or click "Add People" / "Share" on the top right).
+3. In the pop-up dialogue box, enter the email address(es) of the user(s) to invite.
+4. Assign an initial role from the dropdown menu (e.g., Member / Administrator).
+5. Click "Add" / "Add person" to send the invitation.
+
+--------------------------------------------------------------------------------
+PRACTICAL 2-B: ASSIGN ROLES
+--------------------------------------------------------------------------------
+1. Go to "Project settings" -> "People".
+2. Locate the added user in the member list.
+3. Click the "Role" dropdown next to the user's name.
+4. Select the appropriate role (e.g., Administrator, Developer, Viewer, Service Desk Team).
+5. Confirm the assignment.
+
+--------------------------------------------------------------------------------
+PRACTICAL 3-A: CREATE AND CONFIGURE ISSUE TYPES (EPIC, STORY, TASK, BUG)
+--------------------------------------------------------------------------------
+1. In your project dashboard/backlog, click the "+ Create" button at the top (or under the Backlog column).
+2. Click the "Issue type" dropdown menu.
+3. Observe available standard issue types: Epic, Story, Task, and Bug.
+4. Create sample items:
+   - Select "Task", enter summary, and press Enter/Save.
+   - Select "Bug", enter summary and description, and press Enter/Save.
+5. To configure issue types, navigate to "Project settings" -> "Issue types" to view or modify custom fields and schemes.
+
+--------------------------------------------------------------------------------
+PRACTICAL 3-B: CREATE COMPONENTS AND VERSIONS
+--------------------------------------------------------------------------------
+1. Components (logical subdivisions or modules):
+   - Go to "Project settings" -> "Components".
+   - Click "Create component".
+   - Enter Component Name (e.g., "UI", "Database", "Authentication"), Description, and Component Lead.
+   - Click "Save".
+2. Versions (releases/milestones):
+   - Go to "Project settings" -> "Versions" (or "Releases" in the project menu).
+   - Click "Create release" / "Create version".
+   - Enter Version Name (e.g., "v1.0.0"), Start Date, Release Date, and Description.
+   - Click "Save".
+
+--------------------------------------------------------------------------------
+PRACTICAL 4-A: CREATE ISSUES UNDER AN EPIC
+--------------------------------------------------------------------------------
+1. Click the "+ Create" button at the top header.
+2. Set "Issue Type" to "Epic".
+3. Enter the Epic Name / Summary (e.g., "ELMS - E-Learning Management System") and click "Create".
+4. Open the created Epic from the backlog or board.
+5. In the "Child issues" section of the Epic, click "+" to create linked child issues:
+   - Add Stories, Tasks, or Bugs directly underneath.
+   - Alternatively, create a standard issue and set the "Parent" / "Epic Link" field to this Epic.
+
+--------------------------------------------------------------------------------
+PRACTICAL 4-B: ASSIGN ISSUES TO USERS AND SET PRIORITY & DUE DATE
+--------------------------------------------------------------------------------
+1. Open an existing issue (e.g., "Specification Understanding").
+2. In the right-hand details pane:
+   - Assignee: Click and pick a team member from the user list.
+   - Priority: Click and select priority (Highest, High, Medium, Low, Lowest).
+   - Due Date: Click the calendar picker and select a target completion date.
+3. Close the panel (click 'X'); changes are updated automatically.
+
+--------------------------------------------------------------------------------
+PRACTICAL 5-A: DESIGN A CUSTOM WORKFLOW
+--------------------------------------------------------------------------------
+1. Navigate to "Project settings" -> "Workflows".
+2. Click "Add Workflow" -> "Add Existing Workflow" (or "Add Workflow" to design from scratch).
+3. Select "Classic default workflow" (or a chosen template) and click "Next".
+4. Associate the workflow with an issue type (e.g., Epic) and click "Finish".
+5. Switch to the "Diagram" view to visualize the status nodes and transition pathways.
+
+--------------------------------------------------------------------------------
+PRACTICAL 5-B: ADD TRANSITIONS AND CONDITIONS
+--------------------------------------------------------------------------------
+1. While in the workflow canvas, click "Edit Workflow" to enter draft mode.
+2. Click "Add Transition":
+   - Select the "From status" (e.g., In Progress).
+   - Select the "To status" (e.g., Done).
+   - Enter a name for the transition (e.g., "Complete Work") and click "Create".
+3. Click on the transition arrow, then click "Add Rule" (or Conditions / Validators).
+4. Choose a condition/rule (e.g., "Only Assignee can execute this transition") and click "Select" / "Add".
+5. Click "Update Workflow".
+
+--------------------------------------------------------------------------------
+PRACTICAL 5-C: PUBLISH AND ASSOCIATE WORKFLOW WITH A PROJECT
+--------------------------------------------------------------------------------
+1. In the draft workflow editor, click the "Publish" button.
+2. When prompted to backup or associate, choose the workflow scheme for your project.
+3. Review any status mapping prompts for existing issues.
+4. Click "Acknowledge" / "Associate" to make the workflow active for your project.
+
+--------------------------------------------------------------------------------
+PRACTICAL 6-A: CREATE AND CONFIGURE SCRUM BOARD
+--------------------------------------------------------------------------------
+1. Click on "Projects" -> "Create Project".
+2. Select the "Scrum" template and click "Use template".
+3. Select project type (Company-managed / Team-managed) and enter project details.
+4. Click "Next" / "Create".
+5. Once loaded, click the "..." menu on the top right of the board -> "Board settings" to configure columns, swimlanes, and estimation statistics (Story Points).
+
+--------------------------------------------------------------------------------
+PRACTICAL 6-B: CREATE AND START A SPRINT
+--------------------------------------------------------------------------------
+1. Navigate to the "Backlog" from the left project menu.
+2. Click "Create Sprint" at the top of the backlog list.
+3. Add issues to the sprint by clicking "+ Create" inside the sprint container or dragging existing backlog items into it.
+   Sample Sprint Backlog:
+   - User Registration (Story, 3 Story Points)
+   - User Login (Story, 3 Story Points)
+   - Product Catalog (Story, 5 Story Points)
+   - Shopping Cart (Story, 8 Story Points)
+   - Checkout Process (Story, 13 Story Points)
+4. Click "Start Sprint".
+5. Enter the Sprint Name, Duration (e.g., 2 weeks), and Sprint Goal, then click "Start".
+
+--------------------------------------------------------------------------------
+PRACTICAL 6-C: COMPLETE SPRINT AND GENERATE SPRINT REPORT
+--------------------------------------------------------------------------------
+1. On the active Scrum board, drag completed tasks across to the "DONE" column.
+2. Click the "Complete Sprint" button on the top right.
+3. If any incomplete issues remain, choose whether to move them to the Backlog or to the Next Sprint.
+4. Click "Complete".
+5. Jira automatically navigates to the "Sprint Report", showing the burndown data, completed story points, and sprint summary.
+
+--------------------------------------------------------------------------------
+PRACTICAL 7-A: CREATE A COMPANY-MANAGED KANBAN PROJECT
+--------------------------------------------------------------------------------
+1. Go to "Projects" -> "Create Project".
+2. Choose "Kanban" and click "Use template".
+3. Select "Company-managed".
+4. Enter project name (e.g., "Online Shopping Site") and key, then click "Next".
+5. Invite team members on the "Bring your team along" page (or skip) and click "Next".
+
+--------------------------------------------------------------------------------
+PRACTICAL 7-B: CONFIGURE KANBAN BOARD
+--------------------------------------------------------------------------------
+1. Open the Kanban project board.
+2. Create initial backlog cards: Click "+ Create", select issue type "Task", type the title, and hit Enter.
+3. Open a task card to assign it to a team member, set the priority level, and specify a due date.
+4. Click "..." on the top right -> "Board settings" -> "Columns":
+   - Add columns (e.g., Backlog, Selected for Development, In Progress, Review, Done).
+   - Set Maximum and Minimum WIP (Work In Progress) limits per column.
+
+--------------------------------------------------------------------------------
+PRACTICAL 7-C: TRACK ISSUE PROGRESS AND GENERATE CONTROL CHART
+--------------------------------------------------------------------------------
+1. Track Progress:
+   - Drag and drop issue cards across columns (from "To Do" -> "In Progress" -> "Done") as development progresses.
+2. Generate Control Chart:
+   - Click "Reports" in the project menu.
+   - Under Agile reports, select "Control Chart".
+   - Analyze cycle time and lead time variations for issues resolved over the time period.
+
+--------------------------------------------------------------------------------
+PRACTICAL 8: JQL QUERIES AND SAVED FILTERS
+--------------------------------------------------------------------------------
+1. Part A - Write Basic JQL Queries:
+   - Go to "Filters" in the top navigation bar -> "View all filters" (or "Search issues").
+   - Click "Switch to JQL".
+   - Execute queries:
+     * Status Filter:   status = "In Progress"
+     * Assignee Filter: assignee = currentUser()
+     * Priority Filter: priority = "High"
+     * Combined Query:  project = "ELMS" AND status = "In Progress" AND priority in ("High", "Highest")
+2. Part B - Save Filters:
+   - Click the "Save filter" button above the search results.
+   - Enter a Filter Name (e.g., "My High Priority Tasks") and set sharing permissions.
+   - Click "Save".
+
+--------------------------------------------------------------------------------
+PRACTICAL 9-A: GENERATE BURNDOWN CHART AND VELOCITY CHART
+--------------------------------------------------------------------------------
+1. Open your Scrum project and click "Reports" on the left menu.
+2. Click "Burndown Chart":
+   - Observe the guideline vs. actual burndown curve over the sprint duration.
+3. Return to "Reports" and click "Velocity Chart":
+   - Review committed vs. completed story points across past completed sprints.
+
+--------------------------------------------------------------------------------
+PRACTICAL 9-B: CREATE PIE CHART / ISSUE STATISTICS REPORT
+--------------------------------------------------------------------------------
+1. Navigate to "Reports" in your project.
+2. Scroll to "Issue Analysis" and click "Pie Chart Report".
+3. Configure the report parameters:
+   - Select Filter or Project.
+   - Statistic Type: Select "Assignee", "Status", or "Priority".
+   - Click "Next" to generate the interactive pie chart.
+4. Optional: Under "Issue Analysis", select "Recently Created Issues Report" to review issue creation rates over specified time intervals.
+
+--------------------------------------------------------------------------------
+PRACTICAL 9-C: CREATE A CUSTOM DASHBOARD WITH GADGETS
+--------------------------------------------------------------------------------
+1. Create Dashboard:
+   - Click "Dashboards" on the top navigation bar -> "Create dashboard".
+   - Enter Dashboard Name (e.g., "Project Health Dashboard") and set access rights.
+   - Click "Save".
+2. Add Gadgets:
+   - Click "Add gadget" on the top right of your newly created dashboard.
+   - Add desired gadgets from the gadget directory (e.g., "Pie Chart", "Assigned to Me", "Filter Results", "Sprint Burndown Gadget").
+   - Configure each gadget's filter/project settings and click "Save".
+   - Click "Done" to finalize the dashboard layout.
+
+--------------------------------------------------------------------------------
+PRACTICAL 10-A: VIEW AND MODIFY PROJECT PERMISSION SCHEME
+--------------------------------------------------------------------------------
+1. Go to "Project settings" -> "Permissions".
+2. Review existing project permissions (e.g., Browse Projects, Create Issues, Edit Issues, Transition Issues).
+3. Click "Actions" -> "Edit permissions" (requires Jira Administrator privileges).
+4. Update permission grants for project roles, groups, or individual users, then click "Save".
+
+--------------------------------------------------------------------------------
+PRACTICAL 10-B: CONFIGURE PROJECT ROLES AND ASSIGN PERMISSIONS
+--------------------------------------------------------------------------------
+1. Go to "Project settings" -> "People" (or Jira Administration -> System -> Project roles).
+2. Check existing roles (Administrators, Developers, Service Desk Team, Viewers).
+3. Click "Add people", type the member's email/username, and select the specific project role.
+4. Click "Add" to assign permissions mapped under that role to the user.
+
+--------------------------------------------------------------------------------
+PRACTICAL 11-A & 11-B: CREATE AND CONFIGURE AN AUTOMATION RULE
+--------------------------------------------------------------------------------
+1. Go to "Project settings" -> "Automation" (or the lightning bolt icon on the top right).
+2. Click "Create rule".
+3. Configure Trigger:
+   - Select "Field value changed" (or "Issue transitioned").
+   - Set "Fields to monitor for changes" to "Status".
+   - Set "For" to "All work item operations". Click "Next".
+4. Configure Condition:
+   - Click "Add condition" -> "Issue fields condition".
+   - Select Field: "Status", Condition: "equals", Value: "Done". Click "Save".
+5. Configure Action:
+   - Click "Add action" -> "Send email" (or "Assign issue").
+   - Enter recipient (e.g., reporter or project lead), subject line, and email body.
+   - Click "Next".
+
+--------------------------------------------------------------------------------
+PRACTICAL 11-C: TEST AND ENABLE AUTOMATION RULE
+--------------------------------------------------------------------------------
+1. Provide a name for the rule (e.g., "Notify On Done Status").
+2. Click "Turn on rule" / "Turn on flow".
+3. To test:
+   - Open an active issue on your board.
+   - Transition the status of the issue to "Done".
+   - Verify that the notification email is triggered and delivered to the recipient.
+   - Check the "Audit log" under Project settings -> Automation to verify successful execution.
+
+--------------------------------------------------------------------------------
+PRACTICAL 12-A: INSTALL AND CONFIGURE THE JIRA MOBILE APP
+--------------------------------------------------------------------------------
+1. Download App:
+   - Android: Open Google Play Store.
+   - iOS: Open Apple App Store.
+   - Search for "Jira Cloud by Atlassian" and tap "Install".
+2. Launch App:
+   - Tap the Jira icon to open the app.
+   - Select "Log In".
+   - Sign in using your registered Google/Atlassian credentials.
+3. Configure App:
+   - Tap "Set Up Jira".
+   - Set notification preferences (Allow notifications / Direct notifications).
+   - Configure Do Not Disturb or critical alert permissions as prompted.
+
+--------------------------------------------------------------------------------
+PRACTICAL 12-B: VIEW AND UPDATE ISSUES AND SPRINTS FROM MOBILE
+--------------------------------------------------------------------------------
+1. Select Project/Space:
+   - Open the app, tap "Spaces" / "Projects", and select your project (e.g., "Online Shopping Site").
+2. Create & Update Issues:
+   - Tap the "+" icon to create a new Story/Task/Bug.
+   - Open any issue card to update Status, add Comments, or reassign Assignees.
+3. Mobile Sprint Management:
+   - Tap the "Backlog" tab.
+   - Tap "+ Create" to add items into the sprint.
+   - Tap "Start Sprint", verify sprint duration/dates, and tap "Start Sprint".
+   - Transition issue cards between columns directly on the mobile board.
+4. View Summary & Metrics:
+   - Tap the "Summary" tab on the project board to inspect completion rings, status overviews, and priority breakdowns in real-time.
+================================================================================
