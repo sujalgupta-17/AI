@@ -1,0 +1,19 @@
+# Bayes's Rule Application
+# Compute the probability
+
+P_D = 0.01
+P_Pos_D = 0.99
+P_Pos_NotD = 0.05
+P_NotD = 1 - P_D
+
+P_D_Pos = (P_Pos_D * P_D) / ((P_Pos_D * P_D) + (P_Pos_NotD * P_NotD))
+
+print("Probability that the person actually has the disease:")
+print(round(P_D_Pos * 100, 2), "%")
+
+
+
+Bayes’ Rule is used to calculate the probability of an event when new information is available. It combines the prior probability 
+of an event with the probability of observing the given evidence. The formula is \(P(A|B)=\frac{P(B|A)P(A)}{P(B)}\). It is useful in
+medical diagnosis, spam detection and decision-making under uncertainty. For example, it can help estimate the probability of a disease 
+after receiving a test result.
