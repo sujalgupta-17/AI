@@ -76,3 +76,6 @@ for state in solution:
     move += 1
 
 print("Total Moves =", len(solution) - 1)
+
+
+: A* actual cost aur goal tak pahunchne ki estimated cost dono ko consider karta hai. \(g(n)\) ab tak ka cost hai aur \(h(n)\) estimated cost hai. Dono add karke next node choose hota hai.
