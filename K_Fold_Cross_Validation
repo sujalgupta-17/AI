@@ -1,0 +1,19 @@
+pip install scikit-learn
+from sklearn.datasets import load_iris
+from sklearn.model_selection import cross_val_score
+from sklearn.neighbors import KNeighborsClassifier
+
+iris = load_iris()
+X=iris.data
+Y=iris.target
+model=KNeighborsClassifier()
+
+scores=cross_val_score(model,X,Y,cv=5)
+print("Accuracy scores for each fold:")
+print(scores)
+
+print("Average Accuracy:", round(scores.mean()*100,2),"%")
+
+K-fold cross-validation is a technique used to evaluate a machine learning model more reliably.
+The dataset is divided into K equal or nearly equal parts called folds. The model is trained K times, 
+each time using one fold for validation and the remaining folds for training. The results are then averaged to estimate model performance. For example, in 5-fold cross-validation, the model is trained and evaluated five times.
