@@ -47,3 +47,6 @@ for step in path:
     print(step[3:6])
     print(step[6:])
     print()
+
+
+BFS mein pehle current node ke saare neighbours visit hote hain, phir next level par jaate hain. Ismein queue use hoti hai. Unweighted graph mein ye shortest path find kar sakta hai.
