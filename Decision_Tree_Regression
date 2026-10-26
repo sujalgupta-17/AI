@@ -1,0 +1,30 @@
+#pip install pandas scikit-learn
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+
+data = pd.read_csv("student_marks.csv")
+
+X = data[['Hours']]
+y = data['Marks']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.3,
+    random_state=1
+)
+
+model = DecisionTreeRegressor()
+
+model.fit(X_train, y_train)
+
+print("Training Accuracy:", model.score(X_train, y_train) * 100)
+print("Testing Accuracy:", model.score(X_test, y_test) * 100)
+
+new_data = pd.DataFrame([[11]], columns=['Hours'])
+prediction = model.predict(new_data)
+
+print("Predicted Marks for 11 Hours:", prediction[0])
+
+Decision Tree Regression is a supervised machine learning algorithm used to predict continuous numerical values. It divides the dataset into smaller groups based on feature values and makes a numerical prediction for each leaf node. For example, it can predict house prices based on area, location-related features and number of rooms. Unlike a Decision Tree Classifier, which predicts categories, a regression tree predicts numerical values.
