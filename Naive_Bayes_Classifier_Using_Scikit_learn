@@ -1,0 +1,47 @@
+#pip install pandas scikit-learn
+
+# Experiment: Practical No. 9
+# Naive Bayes Classification
+# Naive Bayes Classifier using scikit-learn
+
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+from sklearn.naive_bayes import GaussianNB
+
+# Dataset creation
+data = {
+    'Outlook': ['Sunny', 'Sunny', 'Overcast', 'Rainy', 'Rainy', 'Rainy', 'Overcast'],
+    'Temperature': ['Hot', 'Hot', 'Hot', 'Mild', 'Cool', 'Cool', 'Cool'],
+    'Humidity': ['High', 'High', 'High', 'High', 'Normal', 'Normal', 'Normal'],
+    'Windy': ['False', 'True', 'False', 'False', 'False', 'True', 'True'],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+
+# Convert dictionary to DataFrame
+df = pd.DataFrame(data)
+
+# Encode categorical text into numbers
+le = LabelEncoder()
+for col in df.columns:
+    df[col] = le.fit_transform(df[col])
+
+# Feature matrix (X) and target variable (y)
+X = df[['Outlook', 'Temperature', 'Humidity', 'Windy']]
+y = df['Play']
+
+# Train the Gaussian Naive Bayes model
+model = GaussianNB()
+model.fit(X, y)
+
+# Define test input data
+test = pd.DataFrame([[2, 0, 0, 1]], columns=['Outlook', 'Temperature', 'Humidity', 'Windy'])
+
+# Predict outcome
+prediction = model.predict(test)
+
+# Display result based on prediction
+if prediction[0] == 1:
+    print("Prediction: Yes, we can play")
+else:
+    print("Prediction: No, we cannot play")
+
